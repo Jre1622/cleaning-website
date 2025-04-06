@@ -1,0 +1,27 @@
+<!-- Top Banner -->
+<div class="bg-white py-4 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-center justify-between">
+      <!-- Logo Container (Left-Aligned) -->
+      <div class="w-1/2 lg:w-1/3 flex items-center">
+        <a href="/" class="flex items-center hover:opacity-90 transition duration-150">
+          <img src="/images/logo.svg" alt="CleanPro Logo" class="h-9 w-auto" />
+          <span class="ml-3 text-xl font-bold">
+            <span class="text-black">Clean</span>
+            <span class="text-blue-600">Pro</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="w-full lg:w-2/3 mt-4 lg:mt-0">
+        <ul class="flex flex-wrap justify-end space-x-6">
+          <li><a href="/" class="text-gray-600 hover:text-blue-600 <%= active === 'home' ? 'text-blue-600 font-semibold' : '' %>">Home</a></li>
+          <li><a href="/services" class="text-gray-600 hover:text-blue-600 <%= active === 'services' ? 'text-blue-600 font-semibold' : '' %>">Services</a></li>
+          <li><a href="/about" class="text-gray-600 hover:text-blue-600 <%= active === 'about' ? 'text-blue-600 font-semibold' : '' %>">About</a></li>
+          <li><a href="/contact" class="text-gray-600 hover:text-blue-600 <%= active === 'contact' ? 'text-blue-600 font-semibold' : '' %>">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
