@@ -3,30 +3,30 @@
   {
     "@context": "https://schema.org",
     "@type": "CleaningService",
-    "name": "<%= businessName %>",
+    "name": "<%= typeof businessName !== 'undefined' ? businessName : 'HomeCleanMN' %>",
     "description": "<%= description %>",
-    "image": "<%= logoUrl %>",
+    "image": "<%= typeof logoUrl !== 'undefined' ? logoUrl : 'https://homecleanmn.com/images/logo.svg' %>",
     "url": "<%= canonical %>",
-    "telephone": "<%= phone %>",
+    "telephone": "<%= typeof phone !== 'undefined' ? phone : '763-555-1234' %>",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "100 Chesterfield Business Pkwy 2nd floor ste 255",
-      "addressLocality": "Chesterfield",
-      "addressRegion": "MO",
-      "postalCode": "63005",
+      "streetAddress": "123 Maple Grove Parkway",
+      "addressLocality": "Maple Grove",
+      "addressRegion": "MN",
+      "postalCode": "55369",
       "addressCountry": "US"
     },
     "areaServed": {
       "@type": "GeoCircle",
       "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": 38.6631,
-        "longitude": -90.5771
+        "latitude": 45.0724,
+        "longitude": -93.4557
       },
       "geoRadius": 50000
     },
     "openingHours": "Mo,Tu,We,Th,Fr 08:00-17:00",
     "priceRange": "$$",
-    "sameAs": ["https://www.facebook.com/cleanpro", "https://www.twitter.com/cleanpro", "https://www.instagram.com/cleanpro"]
+    "sameAs": ["https://www.facebook.com/homecleanmn", "https://www.twitter.com/homecleanmn", "https://www.instagram.com/homecleanmn"]
   }
 </script>
