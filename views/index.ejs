@@ -6,35 +6,48 @@
     <title><%= title %></title>
     <meta name="description" content="<%= description %>" />
     <link rel="canonical" href="<%= canonical %>" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/output.css" />
     <%- include('partials/social-meta') %> <%- include('partials/structured-data') %>
   </head>
-  <body class="bg-gray-50 min-h-screen flex flex-col">
+  <body class="bg-gray-50 min-h-screen flex flex-col font-sans">
     <%- include('partials/header', { active }) %>
 
     <main class="flex-grow">
       <!-- Hero Section -->
-      <section class="relative bg-blue-600 text-white py-16">
+      <section class="relative bg-gradient-to-r from-clean-blue-600 to-aqua-500 text-white py-16">
         <div class="container mx-auto px-4">
           <div class="max-w-2xl">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Professional Cleaning Services in Minneapolis</h1>
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Professional Cleaning Services in Minneapolis</h1>
             <p class="text-xl mb-8">Providing exceptional cleaning services for homes and businesses in the Minneapolis area.</p>
             <div class="flex flex-wrap gap-4">
-              <a href="/contact" class="bg-white text-blue-600 hover:bg-gray-100 py-3 px-6 rounded-lg font-semibold transition duration-200">Get a Free Quote</a>
-              <a href="/services" class="bg-transparent hover:bg-blue-700 border-2 border-white py-3 px-6 rounded-lg font-semibold transition duration-200">Our Services</a>
+              <a href="/contact" class="bg-white text-clean-blue-600 hover:bg-gray-100 py-3 px-6 rounded-lg font-semibold transition duration-200">Get a Free Quote</a>
+              <a href="/services" class="bg-transparent hover:bg-clean-blue-700 border-2 border-white py-3 px-6 rounded-lg font-semibold transition duration-200">Our Services</a>
             </div>
           </div>
+        </div>
+        <!-- Decorative Bubbles -->
+        <div class="absolute top-0 right-0 w-full h-full overflow-hidden z-0 opacity-20 pointer-events-none">
+          <div class="absolute top-10 right-10 w-20 h-20 rounded-full bg-white"></div>
+          <div class="absolute top-40 right-40 w-16 h-16 rounded-full bg-white"></div>
+          <div class="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-white"></div>
+          <div class="absolute bottom-40 left-30 w-14 h-14 rounded-full bg-white"></div>
+          <div class="absolute top-20 left-20 w-16 h-16 rounded-full bg-white"></div>
         </div>
       </section>
 
       <!-- Services Preview -->
       <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-12">Our Cleaning Services</h2>
+          <h2 class="text-3xl font-heading font-bold text-center mb-12">Our Cleaning Services</h2>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="text-center">
-              <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div class="bg-clean-blue-100 text-clean-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     stroke-linecap="round"
@@ -44,13 +57,13 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold mb-2">Residential Cleaning</h3>
+              <h3 class="text-xl font-heading font-semibold mb-2">Residential Cleaning</h3>
               <p class="text-gray-600 mb-4">We provide comprehensive cleaning services for homes of all sizes.</p>
-              <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+              <a href="/services" class="text-clean-blue-600 hover:text-clean-blue-800 font-medium">Learn more →</a>
             </div>
 
             <div class="text-center">
-              <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div class="bg-clean-blue-100 text-clean-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     stroke-linecap="round"
@@ -60,13 +73,13 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold mb-2">Commercial Cleaning</h3>
+              <h3 class="text-xl font-heading font-semibold mb-2">Commercial Cleaning</h3>
               <p class="text-gray-600 mb-4">Professional cleaning services for businesses and commercial properties.</p>
-              <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+              <a href="/services" class="text-clean-blue-600 hover:text-clean-blue-800 font-medium">Learn more →</a>
             </div>
 
             <div class="text-center">
-              <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div class="bg-clean-blue-100 text-clean-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     stroke-linecap="round"
@@ -76,22 +89,22 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold mb-2">Specialized Cleaning</h3>
+              <h3 class="text-xl font-heading font-semibold mb-2">Specialized Cleaning</h3>
               <p class="text-gray-600 mb-4">Deep cleaning, move-in/out cleaning, and special event cleaning services.</p>
-              <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+              <a href="/services" class="text-clean-blue-600 hover:text-clean-blue-800 font-medium">Learn more →</a>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Call to Action -->
-      <section class="py-16 bg-gray-100">
+      <section class="py-16 bg-gradient-to-r from-aqua-50 to-clean-blue-50 rounded-bubble mx-4 my-8">
         <div class="container mx-auto px-4 text-center">
-          <h2 class="text-3xl font-bold mb-6">Ready for a Cleaner Space?</h2>
+          <h2 class="text-3xl font-heading font-bold mb-6">Ready for a Cleaner Space?</h2>
           <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Contact us today to schedule a cleaning or request a free quote. Our friendly team is ready to help you get the clean space you deserve.
           </p>
-          <a href="/contact" class="bg-blue-600 text-white hover:bg-blue-700 py-3 px-8 rounded-lg font-semibold text-lg transition duration-200">Contact Us Today</a>
+          <a href="/contact" class="bg-clean-blue-500 text-white hover:bg-clean-blue-600 py-3 px-8 rounded-lg font-semibold text-lg transition duration-200 shadow-bubble">Contact Us Today</a>
         </div>
       </section>
     </main>
