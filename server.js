@@ -13,6 +13,9 @@ app.set("views", path.join(__dirname, "views"));
 // Serve static files from the public directory
 app.use(express.static("public"));
 
+// Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded({ extended: true }));
+
 // Logging middleware
 app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
@@ -26,6 +29,50 @@ app.get("/", (req, res) => {
     description: "HomeCleanMN provides expert residential and commercial cleaning services in the Minneapolis Maple Grove/Plymouth area. Get a free quote today!",
     active: "home",
     canonical: `${baseUrl}/`,
+  });
+});
+
+app.get("/services", (req, res) => {
+  res.render("services", {
+    title: "Our Cleaning Services | HomeCleanMN",
+    description: "Explore our comprehensive cleaning services for homes and businesses in the Minneapolis area. Residential, commercial, and specialized cleaning solutions.",
+    active: "services",
+    canonical: `${baseUrl}/services`,
+  });
+});
+
+app.get("/about", (req, res) => {
+  res.render("about", {
+    title: "About HomeCleanMN | Professional Cleaning Service",
+    description: "Learn about HomeCleanMN's commitment to providing top-quality cleaning services in Minneapolis. Meet our team and discover our values.",
+    active: "about",
+    canonical: `${baseUrl}/about`,
+  });
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact", {
+    title: "Contact HomeCleanMN | Request a Cleaning Quote",
+    description: "Get in touch with HomeCleanMN for professional cleaning services in Minneapolis. Request a quote or ask questions about our services.",
+    active: "contact",
+    canonical: `${baseUrl}/contact`,
+  });
+});
+
+// Handle contact form submissions
+app.post("/contact", (req, res) => {
+  // Here you would normally process the form data, send emails, etc.
+  // For now, we'll just redirect to a thank you page
+
+  console.log("Contact form submission:", req.body);
+
+  // Redirect back with a success message
+  res.render("contact", {
+    title: "Contact HomeCleanMN | Request a Cleaning Quote",
+    description: "Get in touch with HomeCleanMN for professional cleaning services in Minneapolis. Request a quote or ask questions about our services.",
+    active: "contact",
+    canonical: `${baseUrl}/contact`,
+    success: "Thank you for your message! We will get back to you shortly.",
   });
 });
 

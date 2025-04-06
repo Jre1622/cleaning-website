@@ -13,7 +13,87 @@
     <%- include('partials/header', { active }) %>
 
     <main class="flex-grow">
-      <!-- Main content goes here -->
+      <!-- Hero Section -->
+      <section class="relative bg-blue-600 text-white py-16">
+        <div class="container mx-auto px-4">
+          <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Professional Cleaning Services in Minneapolis</h1>
+            <p class="text-xl mb-8">Providing exceptional cleaning services for homes and businesses in the Minneapolis area.</p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/contact" class="bg-white text-blue-600 hover:bg-gray-100 py-3 px-6 rounded-lg font-semibold transition duration-200">Get a Free Quote</a>
+              <a href="/services" class="bg-transparent hover:bg-blue-700 border-2 border-white py-3 px-6 rounded-lg font-semibold transition duration-200">Our Services</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Preview -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12">Our Cleaning Services</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Residential Cleaning</h3>
+              <p class="text-gray-600 mb-4">We provide comprehensive cleaning services for homes of all sizes.</p>
+              <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Commercial Cleaning</h3>
+              <p class="text-gray-600 mb-4">Professional cleaning services for businesses and commercial properties.</p>
+              <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+            </div>
+
+            <div class="text-center">
+              <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Specialized Cleaning</h3>
+              <p class="text-gray-600 mb-4">Deep cleaning, move-in/out cleaning, and special event cleaning services.</p>
+              <a href="/services" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-3xl font-bold mb-6">Ready for a Cleaner Space?</h2>
+          <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Contact us today to schedule a cleaning or request a free quote. Our friendly team is ready to help you get the clean space you deserve.
+          </p>
+          <a href="/contact" class="bg-blue-600 text-white hover:bg-blue-700 py-3 px-8 rounded-lg font-semibold text-lg transition duration-200">Contact Us Today</a>
+        </div>
+      </section>
     </main>
 
     <%- include('partials/footer') %>

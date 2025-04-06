@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <meta name="description" content="<%= description %>" />
+    <link rel="canonical" href="<%= canonical %>" />
+    <link rel="stylesheet" href="/output.css" />
+    <%- include('partials/social-meta') %> <%- include('partials/structured-data') %>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+    <%- include('partials/header', { active }) %>
+
+    <main class="flex-grow">
+      <!-- Services page content goes here -->
+      <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">Our Cleaning Services</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Residential Cleaning</h2>
+            <p class="text-gray-600 mb-4">Professional cleaning services for homes of all sizes. We take care of everything from regular maintenance to deep cleaning.</p>
+            <a href="/services/residential" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Commercial Cleaning</h2>
+            <p class="text-gray-600 mb-4">Keep your workspace spotless with our professional commercial cleaning services tailored to your business needs.</p>
+            <a href="/services/commercial" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Deep Cleaning</h2>
+            <p class="text-gray-600 mb-4">Thorough cleaning service that reaches every corner and eliminates built-up dirt, grime, and allergens.</p>
+            <a href="/services/deep-cleaning" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Move In/Out Cleaning</h2>
+            <p class="text-gray-600 mb-4">Make your transition smooth with our comprehensive move-in or move-out cleaning services.</p>
+            <a href="/services/move-in-out" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Recurring Cleaning</h2>
+            <p class="text-gray-600 mb-4">Regular scheduled cleaning services to keep your space consistently clean and fresh.</p>
+            <a href="/services/recurring" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Special Event Cleaning</h2>
+            <p class="text-gray-600 mb-4">Before or after event cleaning services to ensure your venue is pristine for your special occasion.</p>
+            <a href="/services/special-event" class="text-blue-600 hover:text-blue-800 font-medium">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>
