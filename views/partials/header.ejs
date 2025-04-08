@@ -3,7 +3,7 @@
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap items-center justify-between">
       <!-- Logo Container -->
-      <div class="w-1/2 lg:w-1/3 flex items-center">
+      <div class="w-auto flex items-center">
         <a href="/" class="flex items-center hover:opacity-90 transition duration-150">
           <img src="/images/logo.svg" alt="HomeCleanMN Logo" class="h-9 w-auto" />
           <span class="ml-3 text-xl font-heading font-bold">
@@ -11,6 +11,26 @@
             <span class="text-clean-blue-600">Clean</span>
             <span class="text-aqua-500">MN</span>
           </span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation & Call Button -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <nav>
+          <ul class="flex flex-row space-x-6">
+            <li><a href="/" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'home' ? 'text-clean-blue-600 font-semibold' : '' %>">Home</a></li>
+            <li><a href="/services" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'services' ? 'text-clean-blue-600 font-semibold' : '' %>">Services</a></li>
+            <li><a href="/about" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'about' ? 'text-clean-blue-600 font-semibold' : '' %>">About</a></li>
+            <li><a href="/contact" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'contact' ? 'text-clean-blue-600 font-semibold' : '' %>">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="tel:7635551234" class="flex items-center bg-fresh-green-500 text-white hover:bg-fresh-green-600 py-2 px-4 rounded-lg font-semibold transition duration-200 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path
+              d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+            />
+          </svg>
+          Call Now: 763-555-1234
         </a>
       </div>
 
@@ -22,29 +42,13 @@
           </svg>
         </button>
       </div>
-
-      <!-- Desktop Navigation -->
-      <nav class="hidden lg:flex w-full lg:w-2/3 mt-4 lg:mt-0">
-        <ul class="flex flex-row w-full justify-end space-x-6">
-          <li><a href="/" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'home' ? 'text-clean-blue-600 font-semibold' : '' %>">Home</a></li>
-          <li><a href="/services" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'services' ? 'text-clean-blue-600 font-semibold' : '' %>">Services</a></li>
-          <li><a href="/about" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'about' ? 'text-clean-blue-600 font-semibold' : '' %>">About</a></li>
-          <li class="ml-2">
-            <a
-              href="/contact"
-              class="block py-2 px-4 rounded-lg bg-clean-blue-500 text-white hover:bg-clean-blue-600 transition-colors duration-200 <%= active === 'contact' ? 'bg-clean-blue-600' : '' %>"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
-      </nav>
     </div>
   </div>
 </div>
 
 <!-- Mobile Menu (Hidden by default) -->
 <div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-screen z-50 bg-white bg-opacity-95 backdrop-blur-sm transform translate-x-full transition duration-300 ease-in-out">
-  <div class="container mx-auto px-4 py-6 h-full overflow-y-auto">
+  <div class="container mx-auto px-4 py-6 h-full flex flex-col">
     <div class="flex justify-between items-center mb-8">
       <a href="/" class="flex items-center hover:opacity-90 transition duration-150">
         <img src="/images/logo.svg" alt="HomeCleanMN Logo" class="h-8 w-auto" />
@@ -60,22 +64,29 @@
         </svg>
       </button>
     </div>
-    <ul class="space-y-6 text-center text-lg">
+
+    <!-- Main Mobile Nav Links -->
+    <ul class="space-y-6 text-center text-lg flex-grow">
       <li><a href="/" class="block py-3 px-4 text-gray-800 hover:text-clean-blue-600 <%= active === 'home' ? 'text-clean-blue-600 font-semibold' : '' %>">Home</a></li>
       <li><a href="/services" class="block py-3 px-4 text-gray-800 hover:text-clean-blue-600 <%= active === 'services' ? 'text-clean-blue-600 font-semibold' : '' %>">Services</a></li>
       <li><a href="/about" class="block py-3 px-4 text-gray-800 hover:text-clean-blue-600 <%= active === 'about' ? 'text-clean-blue-600 font-semibold' : '' %>">About</a></li>
-      <li class="mt-8">
-        <a
-          href="/contact"
-          class="block py-3 px-6 mx-auto max-w-xs rounded-lg bg-clean-blue-500 text-white hover:bg-clean-blue-600 transition-colors duration-200 <%= active === 'contact' ? 'bg-clean-blue-600' : '' %>"
-          >Contact Us</a
-        >
-      </li>
+      <li><a href="/contact" class="block py-3 px-4 text-gray-800 hover:text-clean-blue-600 <%= active === 'contact' ? 'text-clean-blue-600 font-semibold' : '' %>">Contact</a></li>
     </ul>
 
-    <!-- Mobile menu footer with contact info -->
-    <div class="mt-10 pt-6 border-t border-gray-200">
-      <div class="flex items-center justify-center space-x-4 mb-4">
+    <!-- Mobile menu footer with prominent call button -->
+    <div class="mt-auto pt-6 border-t border-gray-200 pb-6">
+      <a
+        href="tel:7635551234"
+        class="flex items-center justify-center bg-fresh-green-500 text-white hover:bg-fresh-green-600 py-3 px-6 rounded-lg font-semibold text-lg transition duration-200 shadow-sm w-full max-w-xs mx-auto mb-4"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+          />
+        </svg>
+        Call Now: 763-555-1234
+      </a>
+      <div class="flex items-center justify-center space-x-4">
         <a href="https://www.facebook.com/homecleanmn" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition duration-150">
           <span class="sr-only">Facebook</span>
           <svg class="h-5 w-5 text-clean-blue-600" fill="currentColor" viewBox="0 0 24 24">
@@ -101,7 +112,6 @@
           </svg>
         </a>
       </div>
-      <p class="text-center text-gray-600">Phone: <a href="tel:7635551234" class="text-clean-blue-600 hover:text-clean-blue-700">763-555-1234</a></p>
     </div>
   </div>
 </div>

@@ -59,23 +59,6 @@ app.get("/contact", (req, res) => {
   });
 });
 
-// Handle contact form submissions
-app.post("/contact", (req, res) => {
-  // Here you would normally process the form data, send emails, etc.
-  // For now, we'll just redirect to a thank you page
-
-  console.log("Contact form submission:", req.body);
-
-  // Redirect back with a success message
-  res.render("contact", {
-    title: "Contact HomeCleanMN | Request a Cleaning Quote",
-    description: "Get in touch with HomeCleanMN for professional cleaning services in Minneapolis. Request a quote or ask questions about our services.",
-    active: "contact",
-    canonical: `${baseUrl}/contact`,
-    success: "Thank you for your message! We will get back to you shortly.",
-  });
-});
-
 // Service Detail Pages
 app.get("/services/residential", (req, res) => {
   res.render("services/residential", {
