@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
+# Disallow specific directories if needed in the future
+# Disallow: /admin/
+# Disallow: /private/
 
-Sitemap: https://cleanpro.com/sitemap.xml
+Sitemap: https://homecleanmn.com/sitemap.xml
