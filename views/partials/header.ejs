@@ -16,20 +16,20 @@
 
       <!-- Mobile Menu Button -->
       <div class="lg:hidden flex items-center">
-        <button id="mobile-menu-button" class="text-gray-600 hover:text-clean-blue-600 focus:outline-none">
+        <button id="mobile-menu-button" class="text-gray-600 hover:text-clean-blue-600 focus:outline-none" aria-label="Toggle menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
 
-      <!-- Navigation -->
-      <nav id="navigation" class="hidden lg:flex w-full lg:w-2/3 mt-4 lg:mt-0">
-        <ul class="flex flex-col lg:flex-row w-full lg:justify-end space-y-2 lg:space-y-0 lg:space-x-6">
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex w-full lg:w-2/3 mt-4 lg:mt-0">
+        <ul class="flex flex-row w-full justify-end space-x-6">
           <li><a href="/" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'home' ? 'text-clean-blue-600 font-semibold' : '' %>">Home</a></li>
           <li><a href="/services" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'services' ? 'text-clean-blue-600 font-semibold' : '' %>">Services</a></li>
           <li><a href="/about" class="block py-2 text-gray-600 hover:text-clean-blue-600 <%= active === 'about' ? 'text-clean-blue-600 font-semibold' : '' %>">About</a></li>
-          <li class="lg:ml-2">
+          <li class="ml-2">
             <a
               href="/contact"
               class="block py-2 px-4 rounded-lg bg-clean-blue-500 text-white hover:bg-clean-blue-600 transition-colors duration-200 <%= active === 'contact' ? 'bg-clean-blue-600' : '' %>"
@@ -43,20 +43,66 @@
 </div>
 
 <!-- Mobile Menu (Hidden by default) -->
-<div id="mobile-menu" class="lg:hidden bg-white shadow-md hidden">
-  <div class="container mx-auto px-4 py-3">
-    <ul class="space-y-2">
-      <li><a href="/" class="block py-2 px-4 text-gray-600 hover:text-clean-blue-600 <%= active === 'home' ? 'text-clean-blue-600 font-semibold' : '' %>">Home</a></li>
-      <li><a href="/services" class="block py-2 px-4 text-gray-600 hover:text-clean-blue-600 <%= active === 'services' ? 'text-clean-blue-600 font-semibold' : '' %>">Services</a></li>
-      <li><a href="/about" class="block py-2 px-4 text-gray-600 hover:text-clean-blue-600 <%= active === 'about' ? 'text-clean-blue-600 font-semibold' : '' %>">About</a></li>
-      <li>
+<div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-screen z-50 bg-white bg-opacity-95 backdrop-blur-sm transform translate-x-full transition duration-300 ease-in-out">
+  <div class="container mx-auto px-4 py-6 h-full overflow-y-auto">
+    <div class="flex justify-between items-center mb-8">
+      <a href="/" class="flex items-center hover:opacity-90 transition duration-150">
+        <img src="/images/logo.svg" alt="HomeCleanMN Logo" class="h-8 w-auto" />
+        <span class="ml-3 text-lg font-heading font-bold">
+          <span class="text-black">Home</span>
+          <span class="text-clean-blue-600">Clean</span>
+          <span class="text-aqua-500">MN</span>
+        </span>
+      </a>
+      <button id="close-menu-button" class="text-gray-600 hover:text-clean-blue-600 focus:outline-none" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <ul class="space-y-6 text-center text-lg">
+      <li><a href="/" class="block py-3 px-4 text-gray-800 hover:text-clean-blue-600 <%= active === 'home' ? 'text-clean-blue-600 font-semibold' : '' %>">Home</a></li>
+      <li><a href="/services" class="block py-3 px-4 text-gray-800 hover:text-clean-blue-600 <%= active === 'services' ? 'text-clean-blue-600 font-semibold' : '' %>">Services</a></li>
+      <li><a href="/about" class="block py-3 px-4 text-gray-800 hover:text-clean-blue-600 <%= active === 'about' ? 'text-clean-blue-600 font-semibold' : '' %>">About</a></li>
+      <li class="mt-8">
         <a
           href="/contact"
-          class="block py-2 px-4 my-2 rounded-lg bg-clean-blue-500 text-white hover:bg-clean-blue-600 transition-colors duration-200 <%= active === 'contact' ? 'bg-clean-blue-600' : '' %>"
+          class="block py-3 px-6 mx-auto max-w-xs rounded-lg bg-clean-blue-500 text-white hover:bg-clean-blue-600 transition-colors duration-200 <%= active === 'contact' ? 'bg-clean-blue-600' : '' %>"
           >Contact Us</a
         >
       </li>
     </ul>
+
+    <!-- Mobile menu footer with contact info -->
+    <div class="mt-10 pt-6 border-t border-gray-200">
+      <div class="flex items-center justify-center space-x-4 mb-4">
+        <a href="https://www.facebook.com/homecleanmn" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition duration-150">
+          <span class="sr-only">Facebook</span>
+          <svg class="h-5 w-5 text-clean-blue-600" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+            />
+          </svg>
+        </a>
+        <a href="https://www.twitter.com/homecleanmn" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition duration-150">
+          <span class="sr-only">Twitter</span>
+          <svg class="h-5 w-5 text-clean-blue-600" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+            />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/homecleanmn" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition duration-150">
+          <span class="sr-only">Instagram</span>
+          <svg class="h-5 w-5 text-clean-blue-600" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63z"
+            />
+          </svg>
+        </a>
+      </div>
+      <p class="text-center text-gray-600">Phone: <a href="tel:7635551234" class="text-clean-blue-600 hover:text-clean-blue-700">763-555-1234</a></p>
+    </div>
   </div>
 </div>
 
@@ -64,12 +110,40 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const closeMenuButton = document.getElementById("close-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
-    const navigation = document.getElementById("navigation");
 
+    // Function to toggle body scroll
+    function toggleBodyScroll(fixed) {
+      if (fixed) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    }
+
+    // Open menu
     mobileMenuButton.addEventListener("click", function () {
-      navigation.classList.toggle("hidden");
-      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.remove("translate-x-full");
+      mobileMenu.classList.add("translate-x-0");
+      toggleBodyScroll(true);
+    });
+
+    // Close menu
+    closeMenuButton.addEventListener("click", function () {
+      mobileMenu.classList.remove("translate-x-0");
+      mobileMenu.classList.add("translate-x-full");
+      toggleBodyScroll(false);
+    });
+
+    // Also close menu when clicking on a menu item
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.remove("translate-x-0");
+        mobileMenu.classList.add("translate-x-full");
+        toggleBodyScroll(false);
+      });
     });
   });
 </script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <meta name="description" content="<%= description %>" />
+    <link rel="canonical" href="<%= canonical %>" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/output.css" />
+    <%- include('../partials/social-meta') %> <%- include('../partials/structured-data') %>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col font-sans">
+    <%- include('../partials/header', { active }) %>
+
+    <main class="flex-grow">
+      <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumbs placeholder -->
+        <div class="mb-6 text-sm text-gray-500">
+          <!-- Breadcrumbs will go here -->
+          Home &gt; Services &gt; Commercial Cleaning
+        </div>
+
+        <h1 class="text-3xl font-heading font-bold mb-6">Commercial Cleaning Services</h1>
+
+        <div class="prose max-w-none">
+          <p class="mb-4">
+            Maintain a clean, healthy, and professional environment for your employees and clients with HomeCleanMN's reliable commercial cleaning services. We cater to businesses of all sizes, from
+            small offices to large commercial facilities.
+          </p>
+
+          <h2 class="text-2xl font-heading font-semibold mt-8 mb-4">Our Commercial Services Include:</h2>
+          <ul class="list-disc pl-6 mb-6 grid grid-cols-1 md:grid-cols-2 gap-x-8">
+            <li class="mb-2">Office cleaning (desks, common areas, cubicles)</li>
+            <li class="mb-2">Restroom sanitization and stocking</li>
+            <li class="mb-2">Breakroom and kitchen cleaning</li>
+            <li class="mb-2">Floor care (vacuuming, mopping, waxing)</li>
+            <li class="mb-2">Carpet cleaning</li>
+            <li class="mb-2">Window washing</li>
+            <li class="mb-2">Trash and recycling removal</li>
+            <li class="mb-2">Customized cleaning schedules (daily, weekly, bi-weekly)</li>
+          </ul>
+
+          <h2 class="text-2xl font-heading font-semibold mt-8 mb-4">Benefits for Your Business:</h2>
+          <ul class="list-disc pl-6 mb-6">
+            <li class="mb-2">Improved employee productivity and morale in a clean workspace.</li>
+            <li class="mb-2">Positive impression on clients and visitors.</li>
+            <li class="mb-2">Reduced spread of germs and improved workplace health.</li>
+            <li class="mb-2">Reliable and consistent service tailored to your business hours.</li>
+          </ul>
+
+          <div class="mt-10 p-6 bg-gradient-to-r from-aqua-50 to-clean-blue-50 rounded-bubble text-center shadow-bubble">
+            <h3 class="text-2xl font-heading font-bold mb-4">Elevate Your Business Image</h3>
+            <p class="text-lg text-gray-700 mb-6">Contact us to discuss your commercial cleaning needs and receive a customized quote.</p>
+            <a
+              href="/contact?subject=Quote Request - Commercial"
+              class="inline-block bg-clean-blue-500 text-white hover:bg-clean-blue-600 py-3 px-8 rounded-lg font-semibold text-lg transition duration-200 shadow-bubble"
+              >Get a Commercial Quote</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

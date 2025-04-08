@@ -76,6 +76,61 @@ app.post("/contact", (req, res) => {
   });
 });
 
+// Service Detail Pages
+app.get("/services/residential", (req, res) => {
+  res.render("services/residential", {
+    title: "Residential Cleaning Services | HomeCleanMN",
+    description: "Professional residential cleaning services for homes in Minneapolis. Keep your home sparkling with our reliable maid services.",
+    active: "services",
+    canonical: `${baseUrl}/services/residential`,
+  });
+});
+
+app.get("/services/commercial", (req, res) => {
+  res.render("services/commercial", {
+    title: "Commercial Cleaning Services | HomeCleanMN",
+    description: "Reliable commercial and office cleaning services in the Minneapolis area. Maintain a clean and professional workspace.",
+    active: "services",
+    canonical: `${baseUrl}/services/commercial`,
+  });
+});
+
+app.get("/services/deep-cleaning", (req, res) => {
+  res.render("services/deep-cleaning", {
+    title: "Deep Cleaning Services | HomeCleanMN",
+    description: "Thorough deep cleaning services for homes and offices in Minneapolis. Get a fresh start with our detailed cleaning approach.",
+    active: "services",
+    canonical: `${baseUrl}/services/deep-cleaning`,
+  });
+});
+
+app.get("/services/move-in-out", (req, res) => {
+  res.render("services/move-in-out", {
+    title: "Move In/Out Cleaning Services | HomeCleanMN",
+    description: "Stress-free move-in and move-out cleaning services in Minneapolis. Ensure your old or new place is spotless.",
+    active: "services",
+    canonical: `${baseUrl}/services/move-in-out`,
+  });
+});
+
+app.get("/services/recurring", (req, res) => {
+  res.render("services/recurring", {
+    title: "Recurring Cleaning Services | HomeCleanMN",
+    description: "Flexible recurring cleaning plans (weekly, bi-weekly, monthly) for Minneapolis homes and businesses. Enjoy consistent cleanliness.",
+    active: "services",
+    canonical: `${baseUrl}/services/recurring`,
+  });
+});
+
+app.get("/services/special-event", (req, res) => {
+  res.render("services/special-event", {
+    title: "Special Event Cleaning Services | HomeCleanMN",
+    description: "Pre-event and post-event cleaning services for parties, weddings, and corporate functions in Minneapolis.",
+    active: "services",
+    canonical: `${baseUrl}/services/special-event`,
+  });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
