@@ -25,8 +25,8 @@ app.use((req, res, next) => {
 // Basic routes
 app.get("/", (req, res) => {
   res.render("index", {
-    title: "Professional Cleaning Services in Minneapolis | HomeCleanMN",
-    description: "HomeCleanMN provides expert residential and commercial cleaning services in the Minneapolis Maple Grove/Plymouth area. Get a free quote today!",
+    title: "Home Cleaning Services | Maple Grove, Plymouth MN | HomeCleanMN",
+    description: "HomeCleanMN: Top-rated house & office cleaning for Maple Grove, Plymouth, Rogers, St. Michael & NW Suburbs. Get your free quote!",
     active: "home",
     canonical: `${baseUrl}/`,
   });
@@ -34,8 +34,8 @@ app.get("/", (req, res) => {
 
 app.get("/services", (req, res) => {
   res.render("services", {
-    title: "Our Cleaning Services | HomeCleanMN",
-    description: "Explore our comprehensive cleaning services for homes and businesses in the Minneapolis area. Residential, commercial, and specialized cleaning solutions.",
+    title: "Our Cleaning Services in Maple Grove & NW Metro | HomeCleanMN",
+    description: "Explore residential, commercial, deep cleaning & more from HomeCleanMN, serving Maple Grove, Plymouth, Rogers, and surrounding areas.",
     active: "services",
     canonical: `${baseUrl}/services`,
   });
@@ -43,8 +43,8 @@ app.get("/services", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about", {
-    title: "About HomeCleanMN | Professional Cleaning Service",
-    description: "Learn about HomeCleanMN's commitment to providing top-quality cleaning services in Minneapolis. Meet our team and discover our values.",
+    title: "About HomeCleanMN | Local Maple Grove Cleaning Company",
+    description: "Learn about HomeCleanMN, your local, trusted cleaning service provider for Maple Grove, Plymouth, and the NW metro area.",
     active: "about",
     canonical: `${baseUrl}/about`,
   });
@@ -52,8 +52,8 @@ app.get("/about", (req, res) => {
 
 app.get("/contact", (req, res) => {
   res.render("contact", {
-    title: "Contact HomeCleanMN | Request a Cleaning Quote",
-    description: "Get in touch with HomeCleanMN for professional cleaning services in Minneapolis. Request a quote or ask questions about our services.",
+    title: "Contact HomeCleanMN | Cleaning Quotes for Maple Grove Area",
+    description: "Get a free cleaning quote from HomeCleanMN. Contact us for services in Maple Grove, Plymouth, Rogers, St. Michael, and nearby towns.",
     active: "contact",
     canonical: `${baseUrl}/contact`,
   });
@@ -62,8 +62,8 @@ app.get("/contact", (req, res) => {
 // Service Detail Pages
 app.get("/services/residential", (req, res) => {
   res.render("services/residential", {
-    title: "Residential Cleaning Services | HomeCleanMN",
-    description: "Professional residential cleaning services for homes in Minneapolis. Keep your home sparkling with our reliable maid services.",
+    title: "Residential House Cleaning | Maple Grove & Plymouth | HomeCleanMN",
+    description: "Professional home & maid cleaning services in Maple Grove, Plymouth, MN. Reliable cleaners for your house. Get a free quote!",
     active: "services",
     canonical: `${baseUrl}/services/residential`,
   });
@@ -71,8 +71,8 @@ app.get("/services/residential", (req, res) => {
 
 app.get("/services/commercial", (req, res) => {
   res.render("services/commercial", {
-    title: "Commercial Cleaning Services | HomeCleanMN",
-    description: "Reliable commercial and office cleaning services in the Minneapolis area. Maintain a clean and professional workspace.",
+    title: "Commercial & Office Cleaning | Maple Grove Area | HomeCleanMN",
+    description: "Reliable office & commercial cleaning services for businesses in Maple Grove, Plymouth, Rogers & NW suburbs.",
     active: "services",
     canonical: `${baseUrl}/services/commercial`,
   });
@@ -80,8 +80,8 @@ app.get("/services/commercial", (req, res) => {
 
 app.get("/services/deep-cleaning", (req, res) => {
   res.render("services/deep-cleaning", {
-    title: "Deep Cleaning Services | HomeCleanMN",
-    description: "Thorough deep cleaning services for homes and offices in Minneapolis. Get a fresh start with our detailed cleaning approach.",
+    title: "Deep Cleaning Services | Maple Grove & NW Suburbs | HomeCleanMN",
+    description: "Thorough deep cleaning services for homes and offices in Maple Grove, Plymouth, Rogers. Get a fresh start with our detailed cleaning approach.",
     active: "services",
     canonical: `${baseUrl}/services/deep-cleaning`,
   });
@@ -89,8 +89,8 @@ app.get("/services/deep-cleaning", (req, res) => {
 
 app.get("/services/move-in-out", (req, res) => {
   res.render("services/move-in-out", {
-    title: "Move In/Out Cleaning Services | HomeCleanMN",
-    description: "Stress-free move-in and move-out cleaning services in Minneapolis. Ensure your old or new place is spotless.",
+    title: "Move In/Out Cleaning Services | Maple Grove Area | HomeCleanMN",
+    description: "Stress-free move-in and move-out cleaning services in Maple Grove, Plymouth, and nearby areas. Ensure your old or new place is spotless.",
     active: "services",
     canonical: `${baseUrl}/services/move-in-out`,
   });
@@ -98,8 +98,8 @@ app.get("/services/move-in-out", (req, res) => {
 
 app.get("/services/recurring", (req, res) => {
   res.render("services/recurring", {
-    title: "Recurring Cleaning Services | HomeCleanMN",
-    description: "Flexible recurring cleaning plans (weekly, bi-weekly, monthly) for Minneapolis homes and businesses. Enjoy consistent cleanliness.",
+    title: "Recurring Cleaning Services | Maple Grove, Plymouth | HomeCleanMN",
+    description: "Flexible weekly, bi-weekly, monthly cleaning plans for Maple Grove & Plymouth homes/businesses. Enjoy consistent cleanliness.",
     active: "services",
     canonical: `${baseUrl}/services/recurring`,
   });
@@ -107,10 +107,29 @@ app.get("/services/recurring", (req, res) => {
 
 app.get("/services/special-event", (req, res) => {
   res.render("services/special-event", {
-    title: "Special Event Cleaning Services | HomeCleanMN",
-    description: "Pre-event and post-event cleaning services for parties, weddings, and corporate functions in Minneapolis.",
+    title: "Special Event Cleaning | Maple Grove & Surrounding | HomeCleanMN",
+    description: "Pre-event & post-event cleaning for parties, weddings & functions in Maple Grove, Plymouth, Rogers, St. Michael.",
     active: "services",
     canonical: `${baseUrl}/services/special-event`,
+  });
+});
+
+// Legal Pages
+app.get("/privacy-policy", (req, res) => {
+  res.render("privacy-policy", {
+    title: "Privacy Policy | HomeCleanMN",
+    description: "Read the Privacy Policy for HomeCleanMN, serving the Maple Grove, MN area.",
+    active: "privacy",
+    canonical: `${baseUrl}/privacy-policy`,
+  });
+});
+
+app.get("/terms-of-service", (req, res) => {
+  res.render("terms-of-service", {
+    title: "Terms of Service | HomeCleanMN",
+    description: "Read the Terms of Service for HomeCleanMN, providing cleaning services in the Maple Grove, MN area.",
+    active: "terms",
+    canonical: `${baseUrl}/terms-of-service`,
   });
 });
 
